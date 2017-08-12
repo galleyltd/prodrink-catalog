@@ -1,0 +1,53 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+group 'io.prodrink.catalog'
+version '0.0.1'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+}
+
+ext {
+    grpcVersion = '1.5.0'
+    guavaVersion = '23.0'
+    logbackVersion = '1.2.3'
+    protoObjectsVersion = '0.0.1'
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-jdbc"
+//    compile "org.liquibase:liquibase-core"
+//    runtime "org.postgresql:postgresql"
+    runtime group: 'com.h2database', name: 'h2', version: '1.4.196'
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+
+    compile "io.grpc:grpc-stub:${grpcVersion}"
+    compile "io.grpc:grpc-netty:${grpcVersion}"
+    compile "io.grpc:grpc-protobuf:${grpcVersion}"
+
+    compile "com.google.guava:guava:${guavaVersion}"
+
+    compile "ch.qos.logback:logback-classic:${logbackVersion}"
+    compile "ch.qos.logback:logback-core:${logbackVersion}"
+
+    compileOnly "org.projectlombok:lombok"
+
+    compile "io.prodrink.proto:proto-objects:${protoObjectsVersion}"
+}
