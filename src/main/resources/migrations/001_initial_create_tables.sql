@@ -7,7 +7,7 @@ CREATE TABLE categories (
 
 CREATE TABLE property_types (
   id SERIAL,
-  value VARCHAR(128),
+  name VARCHAR(256),
   value_type VARCHAR(32),
   PRIMARY KEY(id)
 );
