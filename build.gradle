@@ -32,11 +32,13 @@ ext {
 }
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-jdbc"
-//    compile "org.liquibase:liquibase-core"
-//    runtime "org.postgresql:postgresql"
-    runtime group: 'com.h2database', name: 'h2', version: '1.4.196'
-    testCompile "org.springframework.boot:spring-boot-starter-test"
+    compile ("org.springframework.boot:spring-boot-starter-jdbc") {
+        exclude module: 'tomcat-jdbc'
+    }
+
+    compile "org.postgresql:postgresql"
+    compile "org.liquibase:liquibase-core"
+    compile "com.zaxxer:HikariCP"
 
     compile "io.grpc:grpc-stub:${grpcVersion}"
     compile "io.grpc:grpc-netty:${grpcVersion}"
@@ -49,5 +51,11 @@ dependencies {
 
     compileOnly "org.projectlombok:lombok"
 
-    compile "io.prodrink.proto:proto-objects:${protoObjectsVersion}"
+    compile ("io.prodrink.proto:proto-objects:${protoObjectsVersion}") {
+        exclude group: 'io.grpc'
+    }
+
+    testCompile ("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: 'com.vaadin.external.google:'
+    }
 }

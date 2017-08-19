@@ -10,12 +10,11 @@ import org.springframework.stereotype.Service;
 public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBase {
     @Override
     public StreamObserver<DrinkRequest> getDrinksById(StreamObserver<Drink> responseObserver) {
-        // TODO:
         return null;
     }
 
     @Override
     public void getDrinksPage(DrinkPageRequest request, StreamObserver<Drink> responseObserver) {
-        // TODO:
+
     }
 }
