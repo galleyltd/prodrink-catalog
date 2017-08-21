@@ -9,6 +9,7 @@ CREATE TABLE property_types (
   id SERIAL,
   name VARCHAR(256),
   value_type VARCHAR(32),
+  category_id INTEGER REFERENCES categories (id) ON DELETE CASCADE,
   PRIMARY KEY(id)
 );
 
@@ -21,17 +22,10 @@ CREATE TABLE drinks (
   PRIMARY KEY(id)
 );
 
-CREATE TABLE categories_to_property_types (
-  id SERIAL,
-  category_id INTEGER REFERENCES categories (id) ON DELETE CASCADE,
-  property_type_id INTEGER REFERENCES property_types (id) ON DELETE CASCADE,
-  PRIMARY KEY (category_id, property_type_id)
-);
-
 CREATE TABLE properties (
   id SERIAL,
   drink_id INTEGER REFERENCES drinks (id) ON DELETE CASCADE,
-  property_id INTEGER REFERENCES property_types (id) ON DELETE CASCADE,
+  property_type_id INTEGER REFERENCES property_types (id) ON DELETE CASCADE,
   value VARCHAR,
   PRIMARY KEY(id)
 );

@@ -1,1 +1,1 @@
-docker run --name catalog-postgres -p 5432:5432 -e POSTGRES_PASSWORD=root -d postgres:9.6.4
+docker run --name catalog-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres:9.6.4

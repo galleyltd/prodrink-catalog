@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfiguration {
-    @Value("${server.port}")
+    @Value("${server.grpc.port}")
     private Integer port;
 
     @Bean(destroyMethod = "shutdown")
