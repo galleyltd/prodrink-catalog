@@ -1,10 +1,14 @@
 package io.prodrink.catalog.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity(name = "property_types")
+@Table(name = "property_types")
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
