@@ -4,7 +4,6 @@ import io.grpc.stub.StreamObserver;
 import io.prodrink.catalog.converter.Converters;
 import io.prodrink.catalog.domain.Category;
 import io.prodrink.catalog.domain.Drink;
-import io.prodrink.catalog.dto.DrinkPageRequest;
 import io.prodrink.catalog.dto.DrinkRequest;
 import io.prodrink.catalog.dto.DrinksFromCategoryRequest;
 import io.prodrink.catalog.dto.TopLevelCategoriesRequest;
@@ -22,9 +21,7 @@ public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBas
     private static final Logger log = LoggerFactory.getLogger(CatalogServiceImpl.class);
 
     private final DrinkRepository drinkRepository;
-
     private final CategoryRepository categoryRepository;
-
     private final Converters converters;
 
     @Autowired
@@ -61,26 +58,12 @@ public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBas
 
     @Override
     public void getDrinksFromCategory(DrinksFromCategoryRequest request, StreamObserver<Drink> responseObserver) {
-        String userId = request.getUserId();// TODO:
-        drinkRepository.getDrinksFromCategory(request.getCategoryId())
+        String userId = request.getUserId(); // TODO:
+        PageRequest pageable = new PageRequest(request.getPageNumber(), request.getPerPage());
+        drinkRepository.getDrinksFromCategory(request.getCategoryId(), pageable)
                 .stream()
                 .map(converters::getDrinkFromEntity)
                 .forEach(responseObserver::onNext);
         responseObserver.onCompleted();
-    }
-
-    @Override
-    public void getDrinksPage(DrinkPageRequest request, StreamObserver<Drink> responseObserver) {
-        // hello non-reactive jdbc :-(
-        try {
-            String userId = request.getUserId(); // TODO
-            PageRequest pageable = new PageRequest(request.getPageNumber(), request.getPerPage());
-            for (DrinkEntity entity : drinkRepository.findAll(pageable)) {
-                responseObserver.onNext(converters.getDrinkFromEntity(entity));
-            }
-            responseObserver.onCompleted();
-        } catch (Exception e) {
-            responseObserver.onError(e);
-        }
     }
 }
