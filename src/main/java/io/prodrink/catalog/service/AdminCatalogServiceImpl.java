@@ -21,7 +21,8 @@ public class AdminCatalogServiceImpl extends AdminCatalogServiceGrpc.AdminCatalo
     }
 
     @Override
-    public StreamObserver<DrinkDeletionRequest> deleteDrink(StreamObserver<DrinkDeletionResponse> responseObserver) {
+    public StreamOb
+    server<DrinkDeletionRequest> deleteDrink(StreamObserver<DrinkDeletionResponse> responseObserver) {
         // TODO
         throw new UnsupportedOperationException();
     }
