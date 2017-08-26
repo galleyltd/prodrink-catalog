@@ -9,8 +9,12 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y install docker-ce
 
+before_script:
+  - chmod a+x ./build-script.sh
+  - chmod a+x ./docker-push.sh
+
 script:
-  - ./script.sh
+  - ./build-script.sh
 
 after_success:
   - ./docker-push.sh
