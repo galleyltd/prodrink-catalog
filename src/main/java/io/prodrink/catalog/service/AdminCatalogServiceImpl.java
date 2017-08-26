@@ -1,8 +1,9 @@
 package io.prodrink.catalog.service;
 
 import io.grpc.stub.StreamObserver;
-import io.prodrink.catalog.domain.Drink;
-import io.prodrink.catalog.dto.*;
+import io.prodrink.catalog.generated.domain.Drink;
+import io.prodrink.catalog.generated.dto.*;
+import io.prodrink.catalog.generated.service.AdminCatalogServiceGrpc;
 import org.springframework.stereotype.Service;
 
 @Service

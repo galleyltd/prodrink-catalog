@@ -1,20 +1,13 @@
-buildscript {
-    ext {
-        springBootVersion = '1.5.6.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
+plugins {
+    id "java"
+    id "maven-publish"
+    id "com.google.protobuf" version "0.8.2"
+    id "org.ajoberstar.grgit" version "2.0.0"
+    id "org.springframework.boot" version "1.5.6.RELEASE"
 }
 
 group 'io.prodrink.catalog'
 version '0.0.1'
-
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 
@@ -28,7 +21,30 @@ ext {
     grpcVersion = '1.5.0'
     guavaVersion = '23.0'
     logbackVersion = '1.2.3'
-    protoObjectsVersion = '0.0.1'
+
+    protocVersion = '3.3.0'
+
+    protoDefPackageName = 'catalog'
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${protocVersion}"
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {
+                outputSubDir = "java"
+            }
+        }
+    }
+
+    generatedFilesBaseDir = "$projectDir/src"
 }
 
 dependencies {
@@ -53,11 +69,31 @@ dependencies {
 
     compileOnly "org.projectlombok:lombok"
 
-    compile ("io.prodrink.proto:proto-objects:${protoObjectsVersion}") {
-        exclude group: 'io.grpc'
-    }
-
     testCompile ("org.springframework.boot:spring-boot-starter-test") {
         exclude group: 'com.vaadin.external.google:'
     }
+}
+
+task cloneProtoDefRepository {
+    doLast {
+        new File("$projectDir/src/main/java/io/prodrink/catalog/generated").deleteDir()
+
+        def protoFolderPath = 'src/main/proto'
+        new File(protoFolderPath).deleteDir()
+
+        org.ajoberstar.grgit.Grgit.clone(
+                dir: protoFolderPath,
+                uri: 'git@github.com:prodrink/proto.git'
+        )
+
+        new File(protoFolderPath).listFiles().each { file ->
+            if (!file.isDirectory() || file.name != protoDefPackageName) {
+                file.isDirectory() ? file.deleteDir() : file.delete()
+            }
+        }
+    }
+}
+
+classes {
+    dependsOn cloneProtoDefRepository
 }

@@ -1,10 +1,10 @@
 package io.prodrink.catalog.converter;
 
-import io.prodrink.catalog.domain.*;
 import io.prodrink.catalog.entity.CategoryEntity;
 import io.prodrink.catalog.entity.DrinkEntity;
 import io.prodrink.catalog.entity.PropertyEntity;
 import io.prodrink.catalog.entity.PropertyTypeEntity;
+import io.prodrink.catalog.generated.domain.*;
 import io.prodrink.catalog.repository.PropertyTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

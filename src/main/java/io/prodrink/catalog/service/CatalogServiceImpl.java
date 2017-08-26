@@ -2,12 +2,13 @@ package io.prodrink.catalog.service;
 
 import io.grpc.stub.StreamObserver;
 import io.prodrink.catalog.converter.Converters;
-import io.prodrink.catalog.domain.Category;
-import io.prodrink.catalog.domain.Drink;
-import io.prodrink.catalog.dto.DrinkRequest;
-import io.prodrink.catalog.dto.DrinksFromCategoryRequest;
-import io.prodrink.catalog.dto.TopLevelCategoriesRequest;
 import io.prodrink.catalog.entity.DrinkEntity;
+import io.prodrink.catalog.generated.domain.Category;
+import io.prodrink.catalog.generated.domain.Drink;
+import io.prodrink.catalog.generated.dto.DrinkRequest;
+import io.prodrink.catalog.generated.dto.DrinksFromCategoryRequest;
+import io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest;
+import io.prodrink.catalog.generated.service.CatalogServiceGrpc;
 import io.prodrink.catalog.repository.CategoryRepository;
 import io.prodrink.catalog.repository.DrinkRepository;
 import org.slf4j.Logger;
