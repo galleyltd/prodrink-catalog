@@ -15,7 +15,8 @@ public class AdminCatalogServiceImpl extends AdminCatalogServiceGrpc.AdminCatalo
     }
 
     @Override
-    public void updateDrink(DrinkUpdateRequest request, StreamObserver<DrinkUpdateResponse> responseObserver) {
+    public void updateDrink(DrinkUpdateR
+                                        equest request, StreamObserver<DrinkUpdateResponse> responseObserver) {
         // TODO
         throw new UnsupportedOperationException();
     }
