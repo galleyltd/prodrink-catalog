@@ -60,7 +60,9 @@ public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBas
     @Override
     public void getDrinksFromCategory(DrinksFromCategoryRequest request, StreamObserver<Drink> responseObserver) {
         String userId = request.getUserId(); // TODO:
-        PageRequest pageable = new PageRequest(request.getPageNumber(), request.getPerPage());
+        int perPage = request.getPerPage();
+        if (perPage == 0) perPage = 20;
+        PageRequest pageable = new PageRequest(request.getPageNumber(), perPage);
         drinkRepository.getDrinksFromCategory(request.getCategoryId(), pageable)
                 .stream()
                 .map(converters::getDrinkFromEntity)

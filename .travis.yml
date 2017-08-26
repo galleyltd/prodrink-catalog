@@ -10,7 +10,7 @@ before_install:
   - sudo apt-get -y install docker-ce
 
 script:
-  - docker build -t prodrink/prodrink-catalog .
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then docker build -t prodrink/prodrink-catalog . else ./gradlew build fi
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
