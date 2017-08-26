@@ -2,6 +2,8 @@ catalog-service
 -
 ### How to launch locally:
 ```
+./gradlew cloneProtoDefRepository generateProto
+
 ./gradlew bootRepackage
 
 docker build -t catalog .

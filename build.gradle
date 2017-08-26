@@ -93,7 +93,3 @@ task cloneProtoDefRepository {
         }
     }
 }
-
-classes {
-    dependsOn cloneProtoDefRepository
-}
