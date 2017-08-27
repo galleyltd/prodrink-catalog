@@ -72,6 +72,8 @@ dependencies {
     testCompile ("org.springframework.boot:spring-boot-starter-test") {
         exclude group: 'com.vaadin.external.google:'
     }
+
+    testCompile "com.h2database:h2"
 }
 
 task cloneProtoDefRepository {

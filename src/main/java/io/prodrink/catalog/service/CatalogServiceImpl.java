@@ -11,16 +11,14 @@ import io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest;
 import io.prodrink.catalog.generated.service.CatalogServiceGrpc;
 import io.prodrink.catalog.repository.CategoryRepository;
 import io.prodrink.catalog.repository.DrinkRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBase {
-    private static final Logger log = LoggerFactory.getLogger(CatalogServiceImpl.class);
-
     private final DrinkRepository drinkRepository;
     private final CategoryRepository categoryRepository;
     private final Converters converters;
@@ -41,7 +39,7 @@ public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBas
         try {
             String userId = request.getUserId(); // TODO:
             DrinkEntity entity = drinkRepository.findOne(request.getDrinkId());
-            responseObserver.onNext(converters.getDrinkFromEntity(entity));
+            responseObserver.onNext(converters.getDomainDrinkFromEntity(entity));
             responseObserver.onCompleted();
         } catch (Exception e) {
             responseObserver.onError(e);
@@ -52,7 +50,7 @@ public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBas
     public void getTopLevelCategories(TopLevelCategoriesRequest request, StreamObserver<Category> responseObserver) {
         categoryRepository.getTopLevelCategories()
                 .stream()
-                .map(converters::getCategoryFromEntity)
+                .map(converters::getDomainCategoryFromEntity)
                 .forEach(responseObserver::onNext);
         responseObserver.onCompleted();
     }
@@ -65,7 +63,7 @@ public class CatalogServiceImpl extends CatalogServiceGrpc.CatalogServiceImplBas
         PageRequest pageable = new PageRequest(request.getPageNumber(), perPage);
         drinkRepository.getDrinksFromCategory(request.getCategoryId(), pageable)
                 .stream()
-                .map(converters::getDrinkFromEntity)
+                .map(converters::getDomainDrinkFromEntity)
                 .forEach(responseObserver::onNext);
         responseObserver.onCompleted();
     }

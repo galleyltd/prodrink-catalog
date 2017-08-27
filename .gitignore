@@ -7,3 +7,5 @@ build/
 .gradle
 
 proto/
+
+.gradletasknamecache

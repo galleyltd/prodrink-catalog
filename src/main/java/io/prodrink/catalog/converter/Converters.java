@@ -22,7 +22,7 @@ public class Converters {
         this.propertyTypeRepository = propertyTypeRepository;
     }
 
-    public Drink getDrinkFromEntity(DrinkEntity entity) {
+    public Drink getDomainDrinkFromEntity(DrinkEntity entity) {
         CategoryEntity categoryEntity = entity.getCategoryEntity();
         List<PropertyEntity> properties = entity.getProperties();
 
@@ -31,20 +31,29 @@ public class Converters {
                 .setName(entity.getName())
                 .setDescription(entity.getDescription())
                 .addAllImageUrls(Arrays.asList(entity.getImageUrls().split(";")))
-                .addAllProperties(properties.stream().map(this::getPropertyFromEntity).collect(Collectors.toList()))
-                .setCategory(getCategoryFromEntity(categoryEntity))
+                .addAllProperties(properties.stream().map(this::getDomainPropertyFromEntity).collect(Collectors.toList()))
+                .setCategory(getDomainCategoryFromEntity(categoryEntity))
                 .build();
     }
 
-    public Property getPropertyFromEntity(PropertyEntity entity) {
+    public DrinkEntity getEntityFromDomainDrink(Drink drink) {
+//        DrinkEntity drinkEntity = new DrinkEntity()
+        return null;
+    }
+
+    public Property getDomainPropertyFromEntity(PropertyEntity entity) {
         return Property.newBuilder()
                 .setId(entity.getId())
-                .setPropertyType(getPropertyTypeFromEntity(entity.getPropertyTypeEntity()))
+                .setPropertyType(getDomainPropertyTypeFromEntity(entity.getPropertyTypeEntity()))
                 .setValue(entity.getValue())
                 .build();
     }
 
-    public PropertyType getPropertyTypeFromEntity(PropertyTypeEntity entity) {
+    public PropertyEntity getEntityFromDomainProperty(Property property) {
+        return null;
+    }
+
+    public PropertyType getDomainPropertyTypeFromEntity(PropertyTypeEntity entity) {
         return PropertyType.newBuilder()
                 .setId(entity.getId())
                 .setName(entity.getName())
@@ -52,10 +61,14 @@ public class Converters {
                 .build();
     }
 
-    public Category getCategoryFromEntity(CategoryEntity entity) {
+    public PropertyTypeEntity getEntityFromDomainPropertyType(PropertyType propertyType) {
+        return null;
+    }
+
+    public Category getDomainCategoryFromEntity(CategoryEntity entity) {
         List<PropertyType> propertyTypes = propertyTypeRepository.findAllByCategory(entity)
                 .stream()
-                .map(this::getPropertyTypeFromEntity)
+                .map(this::getDomainPropertyTypeFromEntity)
                 .collect(Collectors.toList());
         Category.Builder builder = Category.newBuilder()
                 .setId(entity.getId())
@@ -63,8 +76,12 @@ public class Converters {
                 .addAllPropertyTypes(propertyTypes);
         CategoryEntity parentCategoryEntity = entity.getParentCategoryEntity();
         if (parentCategoryEntity != null) {
-            builder.setParentCategory(getCategoryFromEntity(parentCategoryEntity));
+            builder.setParentCategory(getDomainCategoryFromEntity(parentCategoryEntity));
         }
         return builder.build();
+    }
+
+    public CategoryEntity getEntityFromDomainCategory(Category category) {
+        return null;
     }
 }
