@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class DrinkEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
@@ -28,6 +28,6 @@ public class DrinkEntity {
     @JoinColumn(name = "category_id")
     private CategoryEntity categoryEntity;
 
-    @OneToMany(mappedBy = "drinkEntity", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "drinkEntity", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<PropertyEntity> properties;
 }
