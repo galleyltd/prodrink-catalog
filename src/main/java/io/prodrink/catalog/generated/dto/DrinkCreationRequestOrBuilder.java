@@ -3,68 +3,63 @@
 
 package io.prodrink.catalog.generated.dto;
 
-public interface DrinkUpdateRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:catalog.DrinkUpdateRequest)
+public interface DrinkCreationRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:catalog.DrinkCreationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 drink_id = 1;</code>
-   */
-  int getDrinkId();
-
-  /**
-   * <code>string name = 2;</code>
+   * <code>string name = 1;</code>
    */
   java.lang.String getName();
   /**
-   * <code>string name = 2;</code>
+   * <code>string name = 1;</code>
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>int32 category_id = 3;</code>
+   * <code>int32 category_id = 2;</code>
    */
   int getCategoryId();
 
   /**
-   * <code>repeated int32 property_ids = 4;</code>
+   * <code>repeated int32 property_ids = 3;</code>
    */
   java.util.List<java.lang.Integer> getPropertyIdsList();
   /**
-   * <code>repeated int32 property_ids = 4;</code>
+   * <code>repeated int32 property_ids = 3;</code>
    */
   int getPropertyIdsCount();
   /**
-   * <code>repeated int32 property_ids = 4;</code>
+   * <code>repeated int32 property_ids = 3;</code>
    */
   int getPropertyIds(int index);
 
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   java.util.List<java.lang.String>
       getImageUrlsList();
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   int getImageUrlsCount();
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   java.lang.String getImageUrls(int index);
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   com.google.protobuf.ByteString
       getImageUrlsBytes(int index);
 
   /**
-   * <code>string description = 6;</code>
+   * <code>string description = 5;</code>
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 6;</code>
+   * <code>string description = 5;</code>
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();

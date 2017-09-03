@@ -4,18 +4,17 @@
 package io.prodrink.catalog.generated.dto;
 
 /**
- * Protobuf type {@code catalog.DrinkUpdateRequest}
+ * Protobuf type {@code catalog.DrinkCreationRequest}
  */
-public  final class DrinkUpdateRequest extends
+public  final class DrinkCreationRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:catalog.DrinkUpdateRequest)
-    DrinkUpdateRequestOrBuilder {
-  // Use DrinkUpdateRequest.newBuilder() to construct.
-  private DrinkUpdateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:catalog.DrinkCreationRequest)
+    DrinkCreationRequestOrBuilder {
+  // Use DrinkCreationRequest.newBuilder() to construct.
+  private DrinkCreationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DrinkUpdateRequest() {
-    drinkId_ = 0;
+  private DrinkCreationRequest() {
     name_ = "";
     categoryId_ = 0;
     propertyIds_ = java.util.Collections.emptyList();
@@ -28,7 +27,7 @@ public  final class DrinkUpdateRequest extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private DrinkUpdateRequest(
+  private DrinkCreationRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -48,36 +47,31 @@ public  final class DrinkUpdateRequest extends
             }
             break;
           }
-          case 8: {
-
-            drinkId_ = input.readInt32();
-            break;
-          }
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
             break;
           }
-          case 24: {
+          case 16: {
 
             categoryId_ = input.readInt32();
             break;
           }
-          case 32: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          case 24: {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
               propertyIds_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000004;
             }
             propertyIds_.add(input.readInt32());
             break;
           }
-          case 34: {
+          case 26: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
               propertyIds_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000004;
             }
             while (input.getBytesUntilLimit() > 0) {
               propertyIds_.add(input.readInt32());
@@ -85,16 +79,16 @@ public  final class DrinkUpdateRequest extends
             input.popLimit(limit);
             break;
           }
-          case 42: {
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
               imageUrls_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000008;
             }
             imageUrls_.add(s);
             break;
           }
-          case 50: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             description_ = s;
@@ -108,10 +102,10 @@ public  final class DrinkUpdateRequest extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         propertyIds_ = java.util.Collections.unmodifiableList(propertyIds_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         imageUrls_ = imageUrls_.getUnmodifiableView();
       }
       makeExtensionsImmutable();
@@ -119,30 +113,21 @@ public  final class DrinkUpdateRequest extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkUpdateRequest_descriptor;
+    return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkCreationRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkUpdateRequest_fieldAccessorTable
+    return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkCreationRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.prodrink.catalog.generated.dto.DrinkUpdateRequest.class, io.prodrink.catalog.generated.dto.DrinkUpdateRequest.Builder.class);
+            io.prodrink.catalog.generated.dto.DrinkCreationRequest.class, io.prodrink.catalog.generated.dto.DrinkCreationRequest.Builder.class);
   }
 
   private int bitField0_;
-  public static final int DRINK_ID_FIELD_NUMBER = 1;
-  private int drinkId_;
-  /**
-   * <code>int32 drink_id = 1;</code>
-   */
-  public int getDrinkId() {
-    return drinkId_;
-  }
-
-  public static final int NAME_FIELD_NUMBER = 2;
+  public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
-   * <code>string name = 2;</code>
+   * <code>string name = 1;</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -157,7 +142,7 @@ public  final class DrinkUpdateRequest extends
     }
   }
   /**
-   * <code>string name = 2;</code>
+   * <code>string name = 1;</code>
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -173,71 +158,71 @@ public  final class DrinkUpdateRequest extends
     }
   }
 
-  public static final int CATEGORY_ID_FIELD_NUMBER = 3;
+  public static final int CATEGORY_ID_FIELD_NUMBER = 2;
   private int categoryId_;
   /**
-   * <code>int32 category_id = 3;</code>
+   * <code>int32 category_id = 2;</code>
    */
   public int getCategoryId() {
     return categoryId_;
   }
 
-  public static final int PROPERTY_IDS_FIELD_NUMBER = 4;
+  public static final int PROPERTY_IDS_FIELD_NUMBER = 3;
   private java.util.List<java.lang.Integer> propertyIds_;
   /**
-   * <code>repeated int32 property_ids = 4;</code>
+   * <code>repeated int32 property_ids = 3;</code>
    */
   public java.util.List<java.lang.Integer>
       getPropertyIdsList() {
     return propertyIds_;
   }
   /**
-   * <code>repeated int32 property_ids = 4;</code>
+   * <code>repeated int32 property_ids = 3;</code>
    */
   public int getPropertyIdsCount() {
     return propertyIds_.size();
   }
   /**
-   * <code>repeated int32 property_ids = 4;</code>
+   * <code>repeated int32 property_ids = 3;</code>
    */
   public int getPropertyIds(int index) {
     return propertyIds_.get(index);
   }
   private int propertyIdsMemoizedSerializedSize = -1;
 
-  public static final int IMAGE_URLS_FIELD_NUMBER = 5;
+  public static final int IMAGE_URLS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList imageUrls_;
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   public com.google.protobuf.ProtocolStringList
       getImageUrlsList() {
     return imageUrls_;
   }
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   public int getImageUrlsCount() {
     return imageUrls_.size();
   }
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   public java.lang.String getImageUrls(int index) {
     return imageUrls_.get(index);
   }
   /**
-   * <code>repeated string image_urls = 5;</code>
+   * <code>repeated string image_urls = 4;</code>
    */
   public com.google.protobuf.ByteString
       getImageUrlsBytes(int index) {
     return imageUrls_.getByteString(index);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 6;
+  public static final int DESCRIPTION_FIELD_NUMBER = 5;
   private volatile java.lang.Object description_;
   /**
-   * <code>string description = 6;</code>
+   * <code>string description = 5;</code>
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -252,7 +237,7 @@ public  final class DrinkUpdateRequest extends
     }
   }
   /**
-   * <code>string description = 6;</code>
+   * <code>string description = 5;</code>
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -281,27 +266,24 @@ public  final class DrinkUpdateRequest extends
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (drinkId_ != 0) {
-      output.writeInt32(1, drinkId_);
-    }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (categoryId_ != 0) {
-      output.writeInt32(3, categoryId_);
+      output.writeInt32(2, categoryId_);
     }
     if (getPropertyIdsList().size() > 0) {
-      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(26);
       output.writeUInt32NoTag(propertyIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < propertyIds_.size(); i++) {
       output.writeInt32NoTag(propertyIds_.get(i));
     }
     for (int i = 0; i < imageUrls_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, imageUrls_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, imageUrls_.getRaw(i));
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
   }
 
@@ -310,16 +292,12 @@ public  final class DrinkUpdateRequest extends
     if (size != -1) return size;
 
     size = 0;
-    if (drinkId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, drinkId_);
-    }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (categoryId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, categoryId_);
+        .computeInt32Size(2, categoryId_);
     }
     {
       int dataSize = 0;
@@ -344,7 +322,7 @@ public  final class DrinkUpdateRequest extends
       size += 1 * getImageUrlsList().size();
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
     memoizedSize = size;
     return size;
@@ -356,14 +334,12 @@ public  final class DrinkUpdateRequest extends
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.prodrink.catalog.generated.dto.DrinkUpdateRequest)) {
+    if (!(obj instanceof io.prodrink.catalog.generated.dto.DrinkCreationRequest)) {
       return super.equals(obj);
     }
-    io.prodrink.catalog.generated.dto.DrinkUpdateRequest other = (io.prodrink.catalog.generated.dto.DrinkUpdateRequest) obj;
+    io.prodrink.catalog.generated.dto.DrinkCreationRequest other = (io.prodrink.catalog.generated.dto.DrinkCreationRequest) obj;
 
     boolean result = true;
-    result = result && (getDrinkId()
-        == other.getDrinkId());
     result = result && getName()
         .equals(other.getName());
     result = result && (getCategoryId()
@@ -384,8 +360,6 @@ public  final class DrinkUpdateRequest extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DRINK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getDrinkId();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + CATEGORY_ID_FIELD_NUMBER;
@@ -405,69 +379,69 @@ public  final class DrinkUpdateRequest extends
     return hash;
   }
 
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(byte[] data)
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(java.io.InputStream input)
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseDelimitedFrom(java.io.InputStream input)
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseDelimitedFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest parseFrom(
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -479,7 +453,7 @@ public  final class DrinkUpdateRequest extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.prodrink.catalog.generated.dto.DrinkUpdateRequest prototype) {
+  public static Builder newBuilder(io.prodrink.catalog.generated.dto.DrinkCreationRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -494,25 +468,25 @@ public  final class DrinkUpdateRequest extends
     return builder;
   }
   /**
-   * Protobuf type {@code catalog.DrinkUpdateRequest}
+   * Protobuf type {@code catalog.DrinkCreationRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:catalog.DrinkUpdateRequest)
-      io.prodrink.catalog.generated.dto.DrinkUpdateRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:catalog.DrinkCreationRequest)
+      io.prodrink.catalog.generated.dto.DrinkCreationRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkUpdateRequest_descriptor;
+      return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkCreationRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkUpdateRequest_fieldAccessorTable
+      return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkCreationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.prodrink.catalog.generated.dto.DrinkUpdateRequest.class, io.prodrink.catalog.generated.dto.DrinkUpdateRequest.Builder.class);
+              io.prodrink.catalog.generated.dto.DrinkCreationRequest.class, io.prodrink.catalog.generated.dto.DrinkCreationRequest.Builder.class);
     }
 
-    // Construct using io.prodrink.catalog.generated.dto.DrinkUpdateRequest.newBuilder()
+    // Construct using io.prodrink.catalog.generated.dto.DrinkCreationRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -529,16 +503,14 @@ public  final class DrinkUpdateRequest extends
     }
     public Builder clear() {
       super.clear();
-      drinkId_ = 0;
-
       name_ = "";
 
       categoryId_ = 0;
 
       propertyIds_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = "";
 
       return this;
@@ -546,36 +518,35 @@ public  final class DrinkUpdateRequest extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkUpdateRequest_descriptor;
+      return io.prodrink.catalog.generated.dto.AdminDrinkDtoOuter.internal_static_catalog_DrinkCreationRequest_descriptor;
     }
 
-    public io.prodrink.catalog.generated.dto.DrinkUpdateRequest getDefaultInstanceForType() {
-      return io.prodrink.catalog.generated.dto.DrinkUpdateRequest.getDefaultInstance();
+    public io.prodrink.catalog.generated.dto.DrinkCreationRequest getDefaultInstanceForType() {
+      return io.prodrink.catalog.generated.dto.DrinkCreationRequest.getDefaultInstance();
     }
 
-    public io.prodrink.catalog.generated.dto.DrinkUpdateRequest build() {
-      io.prodrink.catalog.generated.dto.DrinkUpdateRequest result = buildPartial();
+    public io.prodrink.catalog.generated.dto.DrinkCreationRequest build() {
+      io.prodrink.catalog.generated.dto.DrinkCreationRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.prodrink.catalog.generated.dto.DrinkUpdateRequest buildPartial() {
-      io.prodrink.catalog.generated.dto.DrinkUpdateRequest result = new io.prodrink.catalog.generated.dto.DrinkUpdateRequest(this);
+    public io.prodrink.catalog.generated.dto.DrinkCreationRequest buildPartial() {
+      io.prodrink.catalog.generated.dto.DrinkCreationRequest result = new io.prodrink.catalog.generated.dto.DrinkCreationRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      result.drinkId_ = drinkId_;
       result.name_ = name_;
       result.categoryId_ = categoryId_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         propertyIds_ = java.util.Collections.unmodifiableList(propertyIds_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.propertyIds_ = propertyIds_;
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         imageUrls_ = imageUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.imageUrls_ = imageUrls_;
       result.description_ = description_;
@@ -611,19 +582,16 @@ public  final class DrinkUpdateRequest extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.prodrink.catalog.generated.dto.DrinkUpdateRequest) {
-        return mergeFrom((io.prodrink.catalog.generated.dto.DrinkUpdateRequest)other);
+      if (other instanceof io.prodrink.catalog.generated.dto.DrinkCreationRequest) {
+        return mergeFrom((io.prodrink.catalog.generated.dto.DrinkCreationRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.prodrink.catalog.generated.dto.DrinkUpdateRequest other) {
-      if (other == io.prodrink.catalog.generated.dto.DrinkUpdateRequest.getDefaultInstance()) return this;
-      if (other.getDrinkId() != 0) {
-        setDrinkId(other.getDrinkId());
-      }
+    public Builder mergeFrom(io.prodrink.catalog.generated.dto.DrinkCreationRequest other) {
+      if (other == io.prodrink.catalog.generated.dto.DrinkCreationRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -634,7 +602,7 @@ public  final class DrinkUpdateRequest extends
       if (!other.propertyIds_.isEmpty()) {
         if (propertyIds_.isEmpty()) {
           propertyIds_ = other.propertyIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensurePropertyIdsIsMutable();
           propertyIds_.addAll(other.propertyIds_);
@@ -644,7 +612,7 @@ public  final class DrinkUpdateRequest extends
       if (!other.imageUrls_.isEmpty()) {
         if (imageUrls_.isEmpty()) {
           imageUrls_ = other.imageUrls_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureImageUrlsIsMutable();
           imageUrls_.addAll(other.imageUrls_);
@@ -667,11 +635,11 @@ public  final class DrinkUpdateRequest extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.prodrink.catalog.generated.dto.DrinkUpdateRequest parsedMessage = null;
+      io.prodrink.catalog.generated.dto.DrinkCreationRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.prodrink.catalog.generated.dto.DrinkUpdateRequest) e.getUnfinishedMessage();
+        parsedMessage = (io.prodrink.catalog.generated.dto.DrinkCreationRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -682,35 +650,9 @@ public  final class DrinkUpdateRequest extends
     }
     private int bitField0_;
 
-    private int drinkId_ ;
-    /**
-     * <code>int32 drink_id = 1;</code>
-     */
-    public int getDrinkId() {
-      return drinkId_;
-    }
-    /**
-     * <code>int32 drink_id = 1;</code>
-     */
-    public Builder setDrinkId(int value) {
-      
-      drinkId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 drink_id = 1;</code>
-     */
-    public Builder clearDrinkId() {
-      
-      drinkId_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -725,7 +667,7 @@ public  final class DrinkUpdateRequest extends
       }
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -741,7 +683,7 @@ public  final class DrinkUpdateRequest extends
       }
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      */
     public Builder setName(
         java.lang.String value) {
@@ -754,7 +696,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      */
     public Builder clearName() {
       
@@ -763,7 +705,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -779,13 +721,13 @@ public  final class DrinkUpdateRequest extends
 
     private int categoryId_ ;
     /**
-     * <code>int32 category_id = 3;</code>
+     * <code>int32 category_id = 2;</code>
      */
     public int getCategoryId() {
       return categoryId_;
     }
     /**
-     * <code>int32 category_id = 3;</code>
+     * <code>int32 category_id = 2;</code>
      */
     public Builder setCategoryId(int value) {
       
@@ -794,7 +736,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>int32 category_id = 3;</code>
+     * <code>int32 category_id = 2;</code>
      */
     public Builder clearCategoryId() {
       
@@ -805,32 +747,32 @@ public  final class DrinkUpdateRequest extends
 
     private java.util.List<java.lang.Integer> propertyIds_ = java.util.Collections.emptyList();
     private void ensurePropertyIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         propertyIds_ = new java.util.ArrayList<java.lang.Integer>(propertyIds_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
-     * <code>repeated int32 property_ids = 4;</code>
+     * <code>repeated int32 property_ids = 3;</code>
      */
     public java.util.List<java.lang.Integer>
         getPropertyIdsList() {
       return java.util.Collections.unmodifiableList(propertyIds_);
     }
     /**
-     * <code>repeated int32 property_ids = 4;</code>
+     * <code>repeated int32 property_ids = 3;</code>
      */
     public int getPropertyIdsCount() {
       return propertyIds_.size();
     }
     /**
-     * <code>repeated int32 property_ids = 4;</code>
+     * <code>repeated int32 property_ids = 3;</code>
      */
     public int getPropertyIds(int index) {
       return propertyIds_.get(index);
     }
     /**
-     * <code>repeated int32 property_ids = 4;</code>
+     * <code>repeated int32 property_ids = 3;</code>
      */
     public Builder setPropertyIds(
         int index, int value) {
@@ -840,7 +782,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>repeated int32 property_ids = 4;</code>
+     * <code>repeated int32 property_ids = 3;</code>
      */
     public Builder addPropertyIds(int value) {
       ensurePropertyIdsIsMutable();
@@ -849,7 +791,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>repeated int32 property_ids = 4;</code>
+     * <code>repeated int32 property_ids = 3;</code>
      */
     public Builder addAllPropertyIds(
         java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -860,50 +802,50 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>repeated int32 property_ids = 4;</code>
+     * <code>repeated int32 property_ids = 3;</code>
      */
     public Builder clearPropertyIds() {
       propertyIds_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
 
     private com.google.protobuf.LazyStringList imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureImageUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         imageUrls_ = new com.google.protobuf.LazyStringArrayList(imageUrls_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
        }
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getImageUrlsList() {
       return imageUrls_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public int getImageUrlsCount() {
       return imageUrls_.size();
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public java.lang.String getImageUrls(int index) {
       return imageUrls_.get(index);
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public com.google.protobuf.ByteString
         getImageUrlsBytes(int index) {
       return imageUrls_.getByteString(index);
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public Builder setImageUrls(
         int index, java.lang.String value) {
@@ -916,7 +858,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public Builder addImageUrls(
         java.lang.String value) {
@@ -929,7 +871,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public Builder addAllImageUrls(
         java.lang.Iterable<java.lang.String> values) {
@@ -940,16 +882,16 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public Builder clearImageUrls() {
       imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string image_urls = 5;</code>
+     * <code>repeated string image_urls = 4;</code>
      */
     public Builder addImageUrlsBytes(
         com.google.protobuf.ByteString value) {
@@ -965,7 +907,7 @@ public  final class DrinkUpdateRequest extends
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 6;</code>
+     * <code>string description = 5;</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -980,7 +922,7 @@ public  final class DrinkUpdateRequest extends
       }
     }
     /**
-     * <code>string description = 6;</code>
+     * <code>string description = 5;</code>
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -996,7 +938,7 @@ public  final class DrinkUpdateRequest extends
       }
     }
     /**
-     * <code>string description = 6;</code>
+     * <code>string description = 5;</code>
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1009,7 +951,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>string description = 6;</code>
+     * <code>string description = 5;</code>
      */
     public Builder clearDescription() {
       
@@ -1018,7 +960,7 @@ public  final class DrinkUpdateRequest extends
       return this;
     }
     /**
-     * <code>string description = 6;</code>
+     * <code>string description = 5;</code>
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1042,39 +984,39 @@ public  final class DrinkUpdateRequest extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:catalog.DrinkUpdateRequest)
+    // @@protoc_insertion_point(builder_scope:catalog.DrinkCreationRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:catalog.DrinkUpdateRequest)
-  private static final io.prodrink.catalog.generated.dto.DrinkUpdateRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:catalog.DrinkCreationRequest)
+  private static final io.prodrink.catalog.generated.dto.DrinkCreationRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.prodrink.catalog.generated.dto.DrinkUpdateRequest();
+    DEFAULT_INSTANCE = new io.prodrink.catalog.generated.dto.DrinkCreationRequest();
   }
 
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateRequest getDefaultInstance() {
+  public static io.prodrink.catalog.generated.dto.DrinkCreationRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DrinkUpdateRequest>
-      PARSER = new com.google.protobuf.AbstractParser<DrinkUpdateRequest>() {
-    public DrinkUpdateRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<DrinkCreationRequest>
+      PARSER = new com.google.protobuf.AbstractParser<DrinkCreationRequest>() {
+    public DrinkCreationRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DrinkUpdateRequest(input, extensionRegistry);
+        return new DrinkCreationRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DrinkUpdateRequest> parser() {
+  public static com.google.protobuf.Parser<DrinkCreationRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DrinkUpdateRequest> getParserForType() {
+  public com.google.protobuf.Parser<DrinkCreationRequest> getParserForType() {
     return PARSER;
   }
 
-  public io.prodrink.catalog.generated.dto.DrinkUpdateRequest getDefaultInstanceForType() {
+  public io.prodrink.catalog.generated.dto.DrinkCreationRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

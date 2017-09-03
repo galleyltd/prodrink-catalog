@@ -24,22 +24,15 @@ public final class CatalogServiceOuter {
   static {
     java.lang.String[] descriptorData = {
       "\n\035catalog/catalog-service.proto\022\007catalog" +
-      "\032\023catalog/drink.proto\032\021catalog/dto.proto" +
-      "2\350\001\n\016CatalogService\0225\n\014getDrinkById\022\025.ca" +
-      "talog.DrinkRequest\032\016.catalog.Drink\022P\n\025ge" +
-      "tTopLevelCategories\022\".catalog.TopLevelCa" +
-      "tegoriesRequest\032\021.catalog.Category0\001\022M\n\025" +
-      "getDrinksFromCategory\022\".catalog.DrinksFr" +
-      "omCategoryRequest\032\016.catalog.Drink0\0012\360\001\n\023" +
-      "AdminCatalogService\022=\n\013createDrink\022\016.cat" +
-      "alog.Drink\032\036.catalog.DrinkCreationRespon",
-      "se\022H\n\013updateDrink\022\033.catalog.DrinkUpdateR" +
-      "equest\032\034.catalog.DrinkUpdateResponse\022P\n\013" +
-      "deleteDrink\022\035.catalog.DrinkDeletionReque" +
-      "st\032\036.catalog.DrinkDeletionResponse(\0010\001BQ" +
-      "\n%io.prodrink.catalog.generated.serviceB" +
-      "\023CatalogServiceOuterP\001\252\002\020prodrink.catalo" +
-      "gb\006proto3"
+      "\032\024catalog/domain.proto\032\021catalog/dto.prot" +
+      "o2\336\001\n\016CatalogService\0225\n\014getDrinkById\022\025.c" +
+      "atalog.DrinkRequest\032\016.catalog.Drink\022F\n\017g" +
+      "etCategoryTree\022\034.catalog.CategoryTreeReq" +
+      "uest\032\025.catalog.CategoryTree\022M\n\025getDrinks" +
+      "FromCategory\022\".catalog.DrinksFromCategor" +
+      "yRequest\032\016.catalog.Drink0\001BQ\n%io.prodrin" +
+      "k.catalog.generated.serviceB\023CatalogServ" +
+      "iceOuterP\001\252\002\020prodrink.catalogb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

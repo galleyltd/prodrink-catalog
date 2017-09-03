@@ -18,10 +18,14 @@ public class DrinkEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String description;
 
-    @Column(name = "image_urls")
+    @Column(name = "image_urls", nullable = false)
     private String imageUrls;
 
     @ManyToOne(fetch = FetchType.EAGER)

@@ -3,7 +3,7 @@
 
 package io.prodrink.catalog.generated.dto;
 
-public interface TopLevelCategoriesRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:catalog.TopLevelCategoriesRequest)
+public interface CategoryTreeRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:catalog.CategoryTreeRequest)
     com.google.protobuf.MessageOrBuilder {
 }

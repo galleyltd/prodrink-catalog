@@ -4,17 +4,17 @@
 package io.prodrink.catalog.generated.dto;
 
 /**
- * Protobuf type {@code catalog.DrinkUpdateResponse}
+ * Protobuf type {@code catalog.CategoryTreeRequest}
  */
-public  final class DrinkUpdateResponse extends
+public  final class CategoryTreeRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:catalog.DrinkUpdateResponse)
-    DrinkUpdateResponseOrBuilder {
-  // Use DrinkUpdateResponse.newBuilder() to construct.
-  private DrinkUpdateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:catalog.CategoryTreeRequest)
+    CategoryTreeRequestOrBuilder {
+  // Use CategoryTreeRequest.newBuilder() to construct.
+  private CategoryTreeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DrinkUpdateResponse() {
+  private CategoryTreeRequest() {
   }
 
   @java.lang.Override
@@ -22,7 +22,7 @@ public  final class DrinkUpdateResponse extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private DrinkUpdateResponse(
+  private CategoryTreeRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -54,14 +54,14 @@ public  final class DrinkUpdateResponse extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_DrinkUpdateResponse_descriptor;
+    return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_CategoryTreeRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_DrinkUpdateResponse_fieldAccessorTable
+    return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_CategoryTreeRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.prodrink.catalog.generated.dto.DrinkUpdateResponse.class, io.prodrink.catalog.generated.dto.DrinkUpdateResponse.Builder.class);
+            io.prodrink.catalog.generated.dto.CategoryTreeRequest.class, io.prodrink.catalog.generated.dto.CategoryTreeRequest.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -93,10 +93,10 @@ public  final class DrinkUpdateResponse extends
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.prodrink.catalog.generated.dto.DrinkUpdateResponse)) {
+    if (!(obj instanceof io.prodrink.catalog.generated.dto.CategoryTreeRequest)) {
       return super.equals(obj);
     }
-    io.prodrink.catalog.generated.dto.DrinkUpdateResponse other = (io.prodrink.catalog.generated.dto.DrinkUpdateResponse) obj;
+    io.prodrink.catalog.generated.dto.CategoryTreeRequest other = (io.prodrink.catalog.generated.dto.CategoryTreeRequest) obj;
 
     boolean result = true;
     return result;
@@ -114,69 +114,69 @@ public  final class DrinkUpdateResponse extends
     return hash;
   }
 
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(byte[] data)
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(java.io.InputStream input)
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseDelimitedFrom(java.io.InputStream input)
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseDelimitedFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse parseFrom(
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -188,7 +188,7 @@ public  final class DrinkUpdateResponse extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.prodrink.catalog.generated.dto.DrinkUpdateResponse prototype) {
+  public static Builder newBuilder(io.prodrink.catalog.generated.dto.CategoryTreeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -203,25 +203,25 @@ public  final class DrinkUpdateResponse extends
     return builder;
   }
   /**
-   * Protobuf type {@code catalog.DrinkUpdateResponse}
+   * Protobuf type {@code catalog.CategoryTreeRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:catalog.DrinkUpdateResponse)
-      io.prodrink.catalog.generated.dto.DrinkUpdateResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:catalog.CategoryTreeRequest)
+      io.prodrink.catalog.generated.dto.CategoryTreeRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_DrinkUpdateResponse_descriptor;
+      return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_CategoryTreeRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_DrinkUpdateResponse_fieldAccessorTable
+      return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_CategoryTreeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.prodrink.catalog.generated.dto.DrinkUpdateResponse.class, io.prodrink.catalog.generated.dto.DrinkUpdateResponse.Builder.class);
+              io.prodrink.catalog.generated.dto.CategoryTreeRequest.class, io.prodrink.catalog.generated.dto.CategoryTreeRequest.Builder.class);
     }
 
-    // Construct using io.prodrink.catalog.generated.dto.DrinkUpdateResponse.newBuilder()
+    // Construct using io.prodrink.catalog.generated.dto.CategoryTreeRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -243,23 +243,23 @@ public  final class DrinkUpdateResponse extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_DrinkUpdateResponse_descriptor;
+      return io.prodrink.catalog.generated.dto.DrinkDtoOuter.internal_static_catalog_CategoryTreeRequest_descriptor;
     }
 
-    public io.prodrink.catalog.generated.dto.DrinkUpdateResponse getDefaultInstanceForType() {
-      return io.prodrink.catalog.generated.dto.DrinkUpdateResponse.getDefaultInstance();
+    public io.prodrink.catalog.generated.dto.CategoryTreeRequest getDefaultInstanceForType() {
+      return io.prodrink.catalog.generated.dto.CategoryTreeRequest.getDefaultInstance();
     }
 
-    public io.prodrink.catalog.generated.dto.DrinkUpdateResponse build() {
-      io.prodrink.catalog.generated.dto.DrinkUpdateResponse result = buildPartial();
+    public io.prodrink.catalog.generated.dto.CategoryTreeRequest build() {
+      io.prodrink.catalog.generated.dto.CategoryTreeRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.prodrink.catalog.generated.dto.DrinkUpdateResponse buildPartial() {
-      io.prodrink.catalog.generated.dto.DrinkUpdateResponse result = new io.prodrink.catalog.generated.dto.DrinkUpdateResponse(this);
+    public io.prodrink.catalog.generated.dto.CategoryTreeRequest buildPartial() {
+      io.prodrink.catalog.generated.dto.CategoryTreeRequest result = new io.prodrink.catalog.generated.dto.CategoryTreeRequest(this);
       onBuilt();
       return result;
     }
@@ -291,16 +291,16 @@ public  final class DrinkUpdateResponse extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.prodrink.catalog.generated.dto.DrinkUpdateResponse) {
-        return mergeFrom((io.prodrink.catalog.generated.dto.DrinkUpdateResponse)other);
+      if (other instanceof io.prodrink.catalog.generated.dto.CategoryTreeRequest) {
+        return mergeFrom((io.prodrink.catalog.generated.dto.CategoryTreeRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.prodrink.catalog.generated.dto.DrinkUpdateResponse other) {
-      if (other == io.prodrink.catalog.generated.dto.DrinkUpdateResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.prodrink.catalog.generated.dto.CategoryTreeRequest other) {
+      if (other == io.prodrink.catalog.generated.dto.CategoryTreeRequest.getDefaultInstance()) return this;
       onChanged();
       return this;
     }
@@ -313,11 +313,11 @@ public  final class DrinkUpdateResponse extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.prodrink.catalog.generated.dto.DrinkUpdateResponse parsedMessage = null;
+      io.prodrink.catalog.generated.dto.CategoryTreeRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.prodrink.catalog.generated.dto.DrinkUpdateResponse) e.getUnfinishedMessage();
+        parsedMessage = (io.prodrink.catalog.generated.dto.CategoryTreeRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -337,39 +337,39 @@ public  final class DrinkUpdateResponse extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:catalog.DrinkUpdateResponse)
+    // @@protoc_insertion_point(builder_scope:catalog.CategoryTreeRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:catalog.DrinkUpdateResponse)
-  private static final io.prodrink.catalog.generated.dto.DrinkUpdateResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:catalog.CategoryTreeRequest)
+  private static final io.prodrink.catalog.generated.dto.CategoryTreeRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.prodrink.catalog.generated.dto.DrinkUpdateResponse();
+    DEFAULT_INSTANCE = new io.prodrink.catalog.generated.dto.CategoryTreeRequest();
   }
 
-  public static io.prodrink.catalog.generated.dto.DrinkUpdateResponse getDefaultInstance() {
+  public static io.prodrink.catalog.generated.dto.CategoryTreeRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DrinkUpdateResponse>
-      PARSER = new com.google.protobuf.AbstractParser<DrinkUpdateResponse>() {
-    public DrinkUpdateResponse parsePartialFrom(
+  private static final com.google.protobuf.Parser<CategoryTreeRequest>
+      PARSER = new com.google.protobuf.AbstractParser<CategoryTreeRequest>() {
+    public CategoryTreeRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DrinkUpdateResponse(input, extensionRegistry);
+        return new CategoryTreeRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DrinkUpdateResponse> parser() {
+  public static com.google.protobuf.Parser<CategoryTreeRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DrinkUpdateResponse> getParserForType() {
+  public com.google.protobuf.Parser<CategoryTreeRequest> getParserForType() {
     return PARSER;
   }
 
-  public io.prodrink.catalog.generated.dto.DrinkUpdateResponse getDefaultInstanceForType() {
+  public io.prodrink.catalog.generated.dto.CategoryTreeRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

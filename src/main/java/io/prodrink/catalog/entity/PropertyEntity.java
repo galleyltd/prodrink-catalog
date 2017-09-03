@@ -25,5 +25,7 @@ public class PropertyEntity {
     @ManyToOne
     @JoinColumn(name = "property_type_id")
     private PropertyTypeEntity propertyTypeEntity;
+
+    @Column(nullable = false)
     private String value;
 }

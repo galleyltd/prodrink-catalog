@@ -20,40 +20,30 @@ public final class DrinkDtoOuter {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_catalog_DrinkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_catalog_TopLevelCategoriesRequest_descriptor;
+    internal_static_catalog_CategoryTreeRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_catalog_TopLevelCategoriesRequest_fieldAccessorTable;
+      internal_static_catalog_CategoryTreeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_catalog_DrinksFromCategoryRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_catalog_DrinksFromCategoryRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_catalog_DrinkCreationResponse_descriptor;
+    internal_static_catalog_CategoryTree_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_catalog_DrinkCreationResponse_fieldAccessorTable;
+      internal_static_catalog_CategoryTree_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_catalog_DrinkUpdateRequest_descriptor;
+    internal_static_catalog_CategoryNode_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_catalog_DrinkUpdateRequest_fieldAccessorTable;
+      internal_static_catalog_CategoryNode_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_catalog_DrinkUpdateResponse_descriptor;
+    internal_static_catalog_CategoryDto_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_catalog_DrinkUpdateResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_catalog_DrinkDeletionRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_catalog_DrinkDeletionRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_catalog_DrinkDeletionResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_catalog_DrinkDeletionResponse_fieldAccessorTable;
+      internal_static_catalog_CategoryDto_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -63,20 +53,20 @@ public final class DrinkDtoOuter {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021catalog/dto.proto\022\007catalog\032\023catalog/dr" +
-      "ink.proto\"1\n\014DrinkRequest\022\020\n\010drink_id\030\001 " +
-      "\001(\005\022\017\n\007user_id\030\002 \001(\t\"\033\n\031TopLevelCategori" +
-      "esRequest\"h\n\031DrinksFromCategoryRequest\022\023" +
-      "\n\013category_id\030\001 \001(\005\022\023\n\013page_number\030\002 \001(\005" +
-      "\022\020\n\010per_page\030\003 \001(\005\022\017\n\007user_id\030\004 \001(\t\"1\n\025D" +
-      "rinkCreationResponse\022\030\n\020created_drink_id" +
-      "\030\001 \001(\005\"E\n\022DrinkUpdateRequest\022\020\n\010drink_id" +
-      "\030\001 \001(\005\022\035\n\005drink\030\002 \001(\0132\016.catalog.Drink\"\025\n" +
-      "\023DrinkUpdateResponse\"(\n\024DrinkDeletionReq",
-      "uest\022\020\n\010drink_id\030\001 \001(\005\"\027\n\025DrinkDeletionR" +
-      "esponseBG\n!io.prodrink.catalog.generated" +
-      ".dtoB\rDrinkDtoOuterP\001\252\002\020prodrink.catalog" +
-      "b\006proto3"
+      "\n\021catalog/dto.proto\022\007catalog\032\024catalog/do" +
+      "main.proto\"1\n\014DrinkRequest\022\020\n\010drink_id\030\001" +
+      " \001(\005\022\017\n\007user_id\030\002 \001(\t\"\025\n\023CategoryTreeReq" +
+      "uest\"h\n\031DrinksFromCategoryRequest\022\023\n\013cat" +
+      "egory_id\030\001 \001(\005\022\023\n\013page_number\030\002 \001(\005\022\020\n\010p" +
+      "er_page\030\003 \001(\005\022\017\n\007user_id\030\004 \001(\t\"A\n\014Catego" +
+      "ryTree\0221\n\022top_category_nodes\030\001 \003(\0132\025.cat" +
+      "alog.CategoryNode\"o\n\014CategoryNode\022\021\n\tpar" +
+      "ent_id\030\001 \001(\005\022\'\n\010children\030\002 \003(\0132\025.catalog" +
+      ".CategoryNode\022#\n\005value\030\003 \001(\0132\024.catalog.C",
+      "ategoryDto\":\n\013CategoryDto\022\n\n\002id\030\001 \001(\005\022\014\n" +
+      "\004name\030\002 \001(\t\022\021\n\timage_url\030\003 \001(\tBG\n!io.pro" +
+      "drink.catalog.generated.dtoB\rDrinkDtoOut" +
+      "erP\001\252\002\020prodrink.catalogb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -97,11 +87,11 @@ public final class DrinkDtoOuter {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_catalog_DrinkRequest_descriptor,
         new java.lang.String[] { "DrinkId", "UserId", });
-    internal_static_catalog_TopLevelCategoriesRequest_descriptor =
+    internal_static_catalog_CategoryTreeRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_catalog_TopLevelCategoriesRequest_fieldAccessorTable = new
+    internal_static_catalog_CategoryTreeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_catalog_TopLevelCategoriesRequest_descriptor,
+        internal_static_catalog_CategoryTreeRequest_descriptor,
         new java.lang.String[] { });
     internal_static_catalog_DrinksFromCategoryRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
@@ -109,36 +99,24 @@ public final class DrinkDtoOuter {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_catalog_DrinksFromCategoryRequest_descriptor,
         new java.lang.String[] { "CategoryId", "PageNumber", "PerPage", "UserId", });
-    internal_static_catalog_DrinkCreationResponse_descriptor =
+    internal_static_catalog_CategoryTree_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_catalog_DrinkCreationResponse_fieldAccessorTable = new
+    internal_static_catalog_CategoryTree_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_catalog_DrinkCreationResponse_descriptor,
-        new java.lang.String[] { "CreatedDrinkId", });
-    internal_static_catalog_DrinkUpdateRequest_descriptor =
+        internal_static_catalog_CategoryTree_descriptor,
+        new java.lang.String[] { "TopCategoryNodes", });
+    internal_static_catalog_CategoryNode_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_catalog_DrinkUpdateRequest_fieldAccessorTable = new
+    internal_static_catalog_CategoryNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_catalog_DrinkUpdateRequest_descriptor,
-        new java.lang.String[] { "DrinkId", "Drink", });
-    internal_static_catalog_DrinkUpdateResponse_descriptor =
+        internal_static_catalog_CategoryNode_descriptor,
+        new java.lang.String[] { "ParentId", "Children", "Value", });
+    internal_static_catalog_CategoryDto_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_catalog_DrinkUpdateResponse_fieldAccessorTable = new
+    internal_static_catalog_CategoryDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_catalog_DrinkUpdateResponse_descriptor,
-        new java.lang.String[] { });
-    internal_static_catalog_DrinkDeletionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_catalog_DrinkDeletionRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_catalog_DrinkDeletionRequest_descriptor,
-        new java.lang.String[] { "DrinkId", });
-    internal_static_catalog_DrinkDeletionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_catalog_DrinkDeletionResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_catalog_DrinkDeletionResponse_descriptor,
-        new java.lang.String[] { });
+        internal_static_catalog_CategoryDto_descriptor,
+        new java.lang.String[] { "Id", "Name", "ImageUrl", });
     io.prodrink.catalog.generated.domain.DrinkOuter.getDescriptor();
   }
 

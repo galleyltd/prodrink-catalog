@@ -17,9 +17,14 @@ public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(nullable = false)
     private String name;
 
     @ManyToOne
     @JoinColumn(name = "parent_category_id")
     private CategoryEntity parentCategoryEntity;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 }

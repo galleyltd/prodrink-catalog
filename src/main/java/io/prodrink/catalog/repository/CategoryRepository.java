@@ -9,4 +9,6 @@ import java.util.List;
 public interface CategoryRepository extends CrudRepository<CategoryEntity, Integer> {
     @Query("SELECT c FROM CategoryEntity c where c.parentCategoryEntity is null")
     List<CategoryEntity> getTopLevelCategories();
+
+    List<CategoryEntity> getAllByParentCategoryEntity_Id(Integer id);
 }

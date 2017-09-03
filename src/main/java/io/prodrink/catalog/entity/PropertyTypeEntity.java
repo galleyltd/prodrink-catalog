@@ -17,9 +17,11 @@ public class PropertyTypeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(nullable =  false)
     private String name;
 
-    @Column(name = "value_type")
+    @Column(name = "value_type", nullable =  false)
     private String valueType;
 
     @ManyToOne

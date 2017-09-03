@@ -1,19 +1,12 @@
 package io.prodrink.catalog.generated.service;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.*;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.*;
 
 /**
  */
@@ -40,16 +33,16 @@ public final class CatalogServiceGrpc {
               io.prodrink.catalog.generated.domain.Drink.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest,
-      io.prodrink.catalog.generated.domain.Category> METHOD_GET_TOP_LEVEL_CATEGORIES =
-      io.grpc.MethodDescriptor.<io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest, io.prodrink.catalog.generated.domain.Category>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static final io.grpc.MethodDescriptor<io.prodrink.catalog.generated.dto.CategoryTreeRequest,
+      io.prodrink.catalog.generated.dto.CategoryTree> METHOD_GET_CATEGORY_TREE =
+      io.grpc.MethodDescriptor.<io.prodrink.catalog.generated.dto.CategoryTreeRequest, io.prodrink.catalog.generated.dto.CategoryTree>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
-              "catalog.CatalogService", "getTopLevelCategories"))
+              "catalog.CatalogService", "getCategoryTree"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest.getDefaultInstance()))
+              io.prodrink.catalog.generated.dto.CategoryTreeRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.prodrink.catalog.generated.domain.Category.getDefaultInstance()))
+              io.prodrink.catalog.generated.dto.CategoryTree.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<io.prodrink.catalog.generated.dto.DrinksFromCategoryRequest,
@@ -100,9 +93,9 @@ public final class CatalogServiceGrpc {
 
     /**
      */
-    public void getTopLevelCategories(io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest request,
-        io.grpc.stub.StreamObserver<io.prodrink.catalog.generated.domain.Category> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_TOP_LEVEL_CATEGORIES, responseObserver);
+    public void getCategoryTree(io.prodrink.catalog.generated.dto.CategoryTreeRequest request,
+        io.grpc.stub.StreamObserver<io.prodrink.catalog.generated.dto.CategoryTree> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_GET_CATEGORY_TREE, responseObserver);
     }
 
     /**
@@ -122,12 +115,12 @@ public final class CatalogServiceGrpc {
                 io.prodrink.catalog.generated.domain.Drink>(
                   this, METHODID_GET_DRINK_BY_ID)))
           .addMethod(
-            METHOD_GET_TOP_LEVEL_CATEGORIES,
-            asyncServerStreamingCall(
+            METHOD_GET_CATEGORY_TREE,
+            asyncUnaryCall(
               new MethodHandlers<
-                io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest,
-                io.prodrink.catalog.generated.domain.Category>(
-                  this, METHODID_GET_TOP_LEVEL_CATEGORIES)))
+                io.prodrink.catalog.generated.dto.CategoryTreeRequest,
+                io.prodrink.catalog.generated.dto.CategoryTree>(
+                  this, METHODID_GET_CATEGORY_TREE)))
           .addMethod(
             METHOD_GET_DRINKS_FROM_CATEGORY,
             asyncServerStreamingCall(
@@ -167,10 +160,10 @@ public final class CatalogServiceGrpc {
 
     /**
      */
-    public void getTopLevelCategories(io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest request,
-        io.grpc.stub.StreamObserver<io.prodrink.catalog.generated.domain.Category> responseObserver) {
-      asyncServerStreamingCall(
-          getChannel().newCall(METHOD_GET_TOP_LEVEL_CATEGORIES, getCallOptions()), request, responseObserver);
+    public void getCategoryTree(io.prodrink.catalog.generated.dto.CategoryTreeRequest request,
+        io.grpc.stub.StreamObserver<io.prodrink.catalog.generated.dto.CategoryTree> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_GET_CATEGORY_TREE, getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -209,10 +202,9 @@ public final class CatalogServiceGrpc {
 
     /**
      */
-    public java.util.Iterator<io.prodrink.catalog.generated.domain.Category> getTopLevelCategories(
-        io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest request) {
-      return blockingServerStreamingCall(
-          getChannel(), METHOD_GET_TOP_LEVEL_CATEGORIES, getCallOptions(), request);
+    public io.prodrink.catalog.generated.dto.CategoryTree getCategoryTree(io.prodrink.catalog.generated.dto.CategoryTreeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_GET_CATEGORY_TREE, getCallOptions(), request);
     }
 
     /**
@@ -249,10 +241,18 @@ public final class CatalogServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_DRINK_BY_ID, getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.prodrink.catalog.generated.dto.CategoryTree> getCategoryTree(
+        io.prodrink.catalog.generated.dto.CategoryTreeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_GET_CATEGORY_TREE, getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DRINK_BY_ID = 0;
-  private static final int METHODID_GET_TOP_LEVEL_CATEGORIES = 1;
+  private static final int METHODID_GET_CATEGORY_TREE = 1;
   private static final int METHODID_GET_DRINKS_FROM_CATEGORY = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -276,9 +276,9 @@ public final class CatalogServiceGrpc {
           serviceImpl.getDrinkById((io.prodrink.catalog.generated.dto.DrinkRequest) request,
               (io.grpc.stub.StreamObserver<io.prodrink.catalog.generated.domain.Drink>) responseObserver);
           break;
-        case METHODID_GET_TOP_LEVEL_CATEGORIES:
-          serviceImpl.getTopLevelCategories((io.prodrink.catalog.generated.dto.TopLevelCategoriesRequest) request,
-              (io.grpc.stub.StreamObserver<io.prodrink.catalog.generated.domain.Category>) responseObserver);
+        case METHODID_GET_CATEGORY_TREE:
+          serviceImpl.getCategoryTree((io.prodrink.catalog.generated.dto.CategoryTreeRequest) request,
+              (io.grpc.stub.StreamObserver<io.prodrink.catalog.generated.dto.CategoryTree>) responseObserver);
           break;
         case METHODID_GET_DRINKS_FROM_CATEGORY:
           serviceImpl.getDrinksFromCategory((io.prodrink.catalog.generated.dto.DrinksFromCategoryRequest) request,
@@ -318,7 +318,7 @@ public final class CatalogServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new CatalogServiceDescriptorSupplier())
               .addMethod(METHOD_GET_DRINK_BY_ID)
-              .addMethod(METHOD_GET_TOP_LEVEL_CATEGORIES)
+              .addMethod(METHOD_GET_CATEGORY_TREE)
               .addMethod(METHOD_GET_DRINKS_FROM_CATEGORY)
               .build();
         }
