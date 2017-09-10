@@ -15,3 +15,6 @@ before_script:
 
 script:
   - ./build-script.sh
+
+after_success:
+  - ./docker-push.sh
