@@ -4,6 +4,7 @@ plugins {
     id "com.google.protobuf" version "0.8.2"
     id "org.ajoberstar.grgit" version "2.0.0"
     id "org.springframework.boot" version "1.5.6.RELEASE"
+    id 'net.researchgate.release' version '2.4.0'
 }
 
 group 'io.prodrink.catalog'
@@ -45,6 +46,29 @@ protobuf {
     }
 
     generatedFilesBaseDir = "$projectDir/src"
+}
+
+release {
+    preCommitText = ''
+    preTagCommitMessage = '[Gradle Release Plugin] - pre tag commit: '
+    tagCommitMessage = '[Gradle Release Plugin] - creating tag: '
+    newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
+    tagTemplate = '${version}'
+    versionPropertyFile = 'gradle.properties'
+    versionProperties = []
+    buildTasks = ['build']
+    versionPatterns = [
+            /(\d+)([^\d]*$)/: { java.util.regex.Matcher m, Project p -> m.replaceAll("${(m[0][1] as int) + 1}${m[0][2]}") }
+    ]
+    scmAdapters = [
+            net.researchgate.release.GitAdapter
+    ]
+
+    git {
+        requireBranch = 'master'
+        pushToRemote = 'origin'
+        pushToBranchPrefix = ''
+    }
 }
 
 dependencies {
