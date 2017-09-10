@@ -1,4 +1,5 @@
 #!/bin/bash
-version=`cat VERSION`
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-docker push prodrink/prodrink-catalog:$version.$TRAVIS_BUILD_NUMBER
+docker tag $IMAGE_PATH:latest $IMAGE_PATH:$VERSION
+docker push $IMAGE_PATH:$VERSION
+docker push $IMAGE_PATH:latest
