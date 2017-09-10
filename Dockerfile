@@ -8,6 +8,6 @@ RUN ./gradlew build -x generateProto
 
 FROM openjdk:8u131-jre-alpine
 WORKDIR /root/dev/catalog
-COPY --from=BUILD_IMAGE /root/dev/catalog/build/libs/catalog-service-0.0.1.jar .
+COPY --from=BUILD_IMAGE /root/dev/catalog/build/libs/catalog-service.jar .
 EXPOSE 8080
-CMD ["java", "-Xmx512m", "-jar", "catalog-service-0.0.1.jar"]
+CMD ["java", "-Xmx512m", "-jar", "catalog-service.jar"]
