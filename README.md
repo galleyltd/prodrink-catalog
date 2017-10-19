@@ -1,7 +1,7 @@
 catalog-service
 -
 ### How to launch locally:
-```
+```sh
 ./gradlew cloneProtoDefRepository generateProto
 
 ./gradlew bootRepackage
